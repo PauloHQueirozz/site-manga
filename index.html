@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MangaPanel — Painéis, notas e discussões</title>
+<title>MangaPanel — Painéis e discussões</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,21 +24,15 @@
   </div>
 </header>
 
-<main class="container">
-  <section class="hero">
-    <div>
-      <div class="eyebrow">Comunidade de mangá</div>
-      <h1>O lugar para<br><span style="color:#ff4d8d">compartilhar</span> suas cenas favoritas.</h1>
-      <p>Publique painéis, dê notas, descubra cenas marcantes e converse com outras pessoas que também vivem por mangá.</p>
-    </div>
-  </section>
+<main class="container" style="padding-top: 30px;">
+  <!-- Seção de texto gigante foi removida daqui -->
 
   <section id="paineis" class="section">
     <div class="section-head">
       <div><h2>Painéis em destaque</h2><span>O que a comunidade está avaliando agora</span></div>
     </div>
     
-    <div class="grid">
+    <div class="grid" id="postsGrid">
       <!-- Painel 1 -->
       <article class="card" onclick="openPost('Tokyo Ghoul', 'imagens/imagem1.jfif', 892)">
         <div class="real-panel">
@@ -59,7 +53,7 @@
         </div>
       </article>
 
-      <!-- Painel 2 (Imagem alterada para imagem3.jfif) -->
+      <!-- Painel 2 -->
       <article class="card" onclick="openPost('Chainsaw Man', 'imagens/imagem3.jfif', 3200)">
         <div class="real-panel">
           <img src="imagens/imagem3.jfif" alt="Painel Alternativo">
@@ -129,21 +123,48 @@
         
         <div class="actions">
           <button class="btn primary">Entrar na discussão</button>
-          <button class="btn" style="background:transparent;color:#fff">Dar nota</button>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- Modal de Publicação Simples -->
+<!-- Modal de Publicação (Completo) -->
 <div class="modal" id="uploadModal">
   <div class="modal-box">
-    <h2 style="margin-top:0">Novo painel</h2>
-    <div class="field"><label>Mangá</label><input placeholder="Ex: Berserk"></div>
-    <div class="field"><label>Comentário</label><textarea placeholder="O que achou da cena?"></textarea></div>
+    <button class="close" id="btnCloseModal" style="right: 20px; top: 20px;">×</button>
+    <h2 style="margin-top:0; margin-bottom: 20px;">Publicar painel</h2>
+    
+    <div class="field">
+      <label>Foto do Capítulo / Cena *</label>
+      <div class="drop" onclick="document.getElementById('panelImage').click()">
+        <input id="panelImage" type="file" accept="image/*" style="display:none">
+        <span id="dropText">Clique para selecionar a imagem</span>
+        <div class="preview-wrap" id="previewWrap">
+          <img id="previewImg" alt="Prévia">
+        </div>
+      </div>
+    </div>
+    
+    <div class="field"><label>Nome do Mangá *</label><input id="uploadManga" placeholder="Ex: Berserk"></div>
+    
+    <div style="display: flex; gap: 12px;">
+      <div class="field" style="flex: 1;"><label>Capítulo / Volume</label><input id="uploadCap" placeholder="Ex: Cap 44"></div>
+      <div class="field" style="flex: 1;">
+        <label>Nota</label>
+        <select id="uploadNota" style="width: 100%; padding: 12px; border: 1px solid var(--line); background: #0b0c11; color: #fff; border-radius: 11px; outline: none;">
+          <option value="10">10 - Obra-prima</option>
+          <option value="9">9 - Excelente</option>
+          <option value="8">8 - Muito bom</option>
+          <option value="7">7 - Bom</option>
+          <option value="6">6 - Regular</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="field"><label>Comentário</label><textarea id="uploadDesc" placeholder="Por que essa cena é marcante?"></textarea></div>
+    
     <div class="form-foot">
-      <button class="btn" id="btnCloseModal" style="background:transparent;color:#fff">Cancelar</button>
       <button class="btn primary" id="btnPublish">Publicar</button>
     </div>
   </div>
@@ -173,7 +194,7 @@
         
         <div class="add-comment">
           <input type="text" id="newCommentInput" placeholder="Adicione um comentário...">
-          <button class="btn primary" id="btnSendComment">Enviar</button>
+          <button class="btn primary" id="btnSendComment" style="padding: 10px 15px;">Enviar</button>
         </div>
       </div>
     </div>

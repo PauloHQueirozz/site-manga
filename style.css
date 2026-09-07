@@ -12,10 +12,6 @@ header{position:sticky;top:0;z-index:10;background:rgba(11,11,16,.82);backdrop-f
 .search{margin-left:auto;width:260px;position:relative}
 .search input{width:100%;padding:11px 14px 11px 38px;background:var(--panel);border:1px solid var(--line);border-radius:12px;color:#fff;outline:none}
 .search-icon{position:absolute;left:13px;top:10px;color:var(--muted)}
-.hero{padding:56px 0 30px;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center}
-.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800}
-.hero h1{font-size:clamp(38px,6vw,70px);line-height:.98;letter-spacing:-3px;margin:13px 0}
-.hero p{color:var(--muted);max-width:640px;font-size:17px;line-height:1.6}
 .actions{display:flex;gap:12px;margin-top:24px}
 .btn{padding:12px 17px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:14px;cursor:pointer}
 .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border:0;color:#fff}
@@ -62,6 +58,9 @@ header{position:sticky;top:0;z-index:10;background:rgba(11,11,16,.82);backdrop-f
 .field input, .field textarea{width:100%;padding:12px;border:1px solid var(--line);background:#0b0c11;color:#fff;border-radius:11px;outline:none}
 .form-foot{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
 .top-upload{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:0;border-radius:11px;padding:10px 14px;font-weight:800;cursor:pointer}
+.drop{border:1px dashed #4b4c58;border-radius:14px;padding:18px;text-align:center;background:#0d0e13;cursor:pointer;color:var(--accent)}
+.preview-wrap{display:none;margin-top:12px}
+.preview-wrap img{display:block;max-height:180px;max-width:100%;margin:auto;border-radius:10px}
 
 /* Estilos específicos para o Modal Interativo */
 .post-modal-box { max-width: 900px; padding: 0; overflow: hidden; }
