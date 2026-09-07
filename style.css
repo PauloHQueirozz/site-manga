@@ -1,0 +1,78 @@
+:root{--bg:#0b0b10;--panel:#12131a;--panel2:#181923;--text:#f6f6f8;--muted:#9b9ca8;--line:#292a35;--accent:#ff4d8d;--accent2:#8b5cf6;--max:1180px}
+*{box-sizing:border-box} 
+body{margin:0;background:radial-gradient(circle at top,#1a1020 0,#0b0b10 38%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--max);margin:auto;padding:0 22px}
+header{position:sticky;top:0;z-index:10;background:rgba(11,11,16,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{height:72px;display:flex;align-items:center;gap:26px}
+.logo{font-size:24px;font-weight:900;letter-spacing:-1px}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:18px;color:var(--muted);font-size:14px}
+.navlinks a:hover{color:#fff}
+.search{margin-left:auto;width:260px;position:relative}
+.search input{width:100%;padding:11px 14px 11px 38px;background:var(--panel);border:1px solid var(--line);border-radius:12px;color:#fff;outline:none}
+.search-icon{position:absolute;left:13px;top:10px;color:var(--muted)}
+.hero{padding:56px 0 30px;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center}
+.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800}
+.hero h1{font-size:clamp(38px,6vw,70px);line-height:.98;letter-spacing:-3px;margin:13px 0}
+.hero p{color:var(--muted);max-width:640px;font-size:17px;line-height:1.6}
+.actions{display:flex;gap:12px;margin-top:24px}
+.btn{padding:12px 17px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:14px;cursor:pointer}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border:0;color:#fff}
+.section{padding:22px 0 46px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
+.section h2{margin:0;font-size:24px}
+.section-head span{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:rgba(18,19,26,.92);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.2s;cursor:pointer}
+.card:hover{transform:translateY(-3px);border-color:#3d3e4b}
+.real-panel{height:240px;background:#080808;position:relative}
+.real-panel img{width:100%;height:100%;object-fit:cover;display:block;opacity:0.8}
+.cover-label{position:absolute;bottom:15px;left:15px;z-index:1;font-size:18px;font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,.8)}
+.card-body{padding:15px}
+.meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:12px}
+.rating{color:#ffd166;font-weight:800}
+.panel-info{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.info-pill{font-size:11px;color:#ddd;border:1px solid var(--line);background:#11131a;padding:6px 9px;border-radius:999px}
+.card p{font-size:13px;line-height:1.5;color:#b4b5c0;margin:12px 0}
+.card-foot{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.trend{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.trend div{background:#101117;padding:13px;border:1px solid var(--line);border-radius:13px}
+.trend b{display:block;font-size:20px;margin-bottom:4px}
+.mini{color:var(--muted);font-size:13px}
+.panel-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.featured-panel{min-height:420px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(145deg,#251425,#161017);display:flex;align-items:center;justify-content:center;padding:28px}
+.manga-page{background:#d1d1d1;color:#111;width:min(100%,360px);aspect-ratio:3/4;padding:12px;box-shadow:0 24px 70px rgba(0,0,0,.5);position:relative;border-radius:4px}
+.manga-page .fake{border:4px solid #333;height:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:8px;padding:8px;background:#222}
+.manga-page .box{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:22px;background:linear-gradient(180deg,#e0e0e0,#999);color:#111;border:2px solid #111}
+.manga-page .wide{grid-column:1/-1}
+.manga-page .box:first-child{font-size:24px}
+.discuss{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}
+.discuss h3{margin:5px 0 20px 0;font-size:20px}
+.comment{padding:16px 0;border-top:1px solid var(--line)}
+.comment:first-of-type{border-top:0;padding-top:0}
+.user{font-size:14px;font-weight:800;color:#fff}
+.comment p{margin:8px 0 0;color:#bbbcc5;font-size:14px;line-height:1.55}
+.vote{float:right;color:var(--muted);font-size:12px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal.show{display:flex}
+.modal-box{width:100%;max-width:600px;background:#11131a;border:1px solid #30313d;border-radius:20px;padding:24px;position:relative}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.field label{font-size:12px;color:#c9c9d3;font-weight:800}
+.field input, .field textarea{width:100%;padding:12px;border:1px solid var(--line);background:#0b0c11;color:#fff;border-radius:11px;outline:none}
+.form-foot{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+.top-upload{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:0;border-radius:11px;padding:10px 14px;font-weight:800;cursor:pointer}
+
+/* Estilos específicos para o Modal Interativo */
+.post-modal-box { max-width: 900px; padding: 0; overflow: hidden; }
+.close { position: absolute; top: 15px; right: 20px; background: rgba(0,0,0,0.5); border: none; color: white; font-size: 24px; cursor: pointer; border-radius: 50%; width: 35px; height: 35px; z-index: 10; }
+.post-layout { display: flex; flex-wrap: wrap; height: 100%; min-height: 500px; }
+.post-image-area { flex: 1.5; background: #000; display: flex; align-items: center; justify-content: center; }
+.post-image-area img { max-width: 100%; max-height: 80vh; object-fit: contain; }
+.post-interact-area { flex: 1; padding: 24px; display: flex; flex-direction: column; background: #11131a; border-left: 1px solid var(--line); min-width: 300px; }
+.post-interact-area h2 { margin-top: 0; font-size: 22px; }
+.btn-like { background: transparent; border: 1px solid var(--line); color: var(--muted); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; margin-bottom: 20px; text-align: left; transition: 0.2s; }
+.btn-like.liked { color: var(--accent); border-color: var(--accent); }
+.comments-list { flex: 1; overflow-y: auto; margin-bottom: 15px; border-top: 1px solid var(--line); padding-top: 15px; }
+.add-comment { display: flex; gap: 8px; }
+.add-comment input { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--line); background: #0b0c11; color: white; outline: none; }
